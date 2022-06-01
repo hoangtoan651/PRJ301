@@ -5,18 +5,17 @@ header{
 }
 footer{
     position: absolute;
-    font-size: 28px;
+    font-size: 15px;
     text-align: center;
     width:99%; 
     bottom:0px; 
-    color: orange;
+/*    color: orange;*/
 }
 .siteLogin{
-    
     display: block;
-    border: white solid 2px;
+    border: white  dotted 2px;
     text-align: center;
-    width: 42%;
+    width: 40%;
     justify-content: center;
     margin: 10% 0 0 30%;
     border-radius: 5px;

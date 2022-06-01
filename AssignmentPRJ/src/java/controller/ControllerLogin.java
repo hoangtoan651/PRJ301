@@ -5,18 +5,19 @@
 
 package controller;
 
+import dal.AccountDBContext;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
  * @author GG
  */
-public class LoginController extends HttpServlet {
+public class ControllerLogin extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,10 +34,10 @@ public class LoginController extends HttpServlet {
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet LoginController</title>");  
+//            out.println("<title>Servlet ControllerLogin</title>");  
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet LoginController at " + request.getContextPath () + "</h1>");
+//            out.println("<h1>Servlet ControllerLogin at " + request.getContextPath () + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
 //        }
@@ -68,6 +69,16 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 //        processRequest(request, response);
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        AccountDBContext db = new AccountDBContext();
+        Account acc = db.getAccount(user, pass);
+        if(acc != null){
+            response.getWriter().println("Chao "+ acc.getDisplayName());
+        }else{
+            response.getWriter().println("Password Sai");
+        }
+        
     }
 
     /** 
