@@ -20,8 +20,13 @@
             <p>Login</p>
             <input type="text"placeholder="Username" name="username"> <br>
             <input type="password"placeholder="Password" name="password"> <br>
+            
             <div class="sub">
-                <input type="submit" value="Login" />
+                <input class="button" type="submit" value="Đăng nhập" /> <br>
+                <br>
+                <a class="button" href="forgot">Quên Mật khẩu</a> <br> 
+                <br>
+                Chưa có tài khoản ? <a class="button" href="register"> Đăng ký ngay</a><br>
             </div>
             <p></p>
         </div>

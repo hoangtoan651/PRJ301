@@ -5,19 +5,18 @@
 
 package controller;
 
-import dal.AccountDBContext;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Account;
 
 /**
  *
  * @author GG
  */
-public class ControllerLogin extends HttpServlet {
+public class ControllerRegister extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -26,22 +25,11 @@ public class ControllerLogin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//    throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet ControllerLogin</title>");  
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet ControllerLogin at " + request.getContextPath () + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-//    } 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+       
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
@@ -54,8 +42,7 @@ public class ControllerLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        processRequest(request, response);
-        request.getRequestDispatcher("View/Login.jsp").forward(request, response);
+        request.getRequestDispatcher("View/Register.jsp").forward(request, response);
     } 
 
     /** 
@@ -68,17 +55,7 @@ public class ControllerLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        processRequest(request, response);
-        String user = request.getParameter("username");
-        String pass = request.getParameter("password");
-        AccountDBContext db = new AccountDBContext();
-        Account acc = db.getAccount(user, pass);
-        if(acc != null){
-//            response.getWriter().println("Chao "+ acc.getDisplayName());
-            request.getRequestDispatcher("View/Home.jsp").forward(request, response);
-        }else{
-            response.getWriter().println("Password Sai");
-        }
+        processRequest(request, response);
     }
 
     /** 

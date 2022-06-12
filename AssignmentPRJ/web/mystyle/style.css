@@ -11,6 +11,19 @@ footer{
     bottom:0px; 
 /*    color: orange;*/
 }
+.button{
+    border-radius: 30px;
+    padding: 4px 12px;
+    margin: 2px;
+    font-size: 16px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+.button:hover{
+    background-color: coral;
+    color: black;
+}
 .siteLogin{
     display: block;
     border: white  dotted 2px;
