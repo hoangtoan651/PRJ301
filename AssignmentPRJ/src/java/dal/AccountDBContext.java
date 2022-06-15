@@ -20,7 +20,7 @@ public class AccountDBContext extends DBContext<Account>{
     
     public Account getAccount(String username, String password){
         try {
-            String sql="select username, DisplayName from Account where username=? and password = ?";
+            String sql="select username from Account where username=? and password = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
@@ -28,7 +28,7 @@ public class AccountDBContext extends DBContext<Account>{
             if(rs.next()){
                 Account acc = new Account();
                 acc.setUsername(rs.getString("username"));
-                acc.setDisplayName(rs.getString("DisplayName"));
+//                acc.setDisplayName(rs.getString("DisplayName"));
                 return acc;
             }
             

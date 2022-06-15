@@ -77,7 +77,8 @@ public class ControllerLogin extends HttpServlet {
 //            response.getWriter().println("Chao "+ acc.getDisplayName());
             request.getRequestDispatcher("View/Home.jsp").forward(request, response);
         }else{
-            response.getWriter().println("Password Sai");
+//            response.getWriter().println("Password Sai");
+            request.getRequestDispatcher("View/Login.jsp").forward(request, response);
         }
     }
 
