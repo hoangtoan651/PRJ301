@@ -21,7 +21,7 @@
     </header>
 
         <nav>
-            <a class="button" href="index.html">Home</a>
+            <a class="button" href="#">Home</a>
             <a class="button" href="#">Change Profile</a>
             <a class="button" href="#">Change Password</a>
             <a class="button" href="#">Log out</a>
@@ -31,12 +31,12 @@
       <p class="orangeTitle" >Academic Information</p>
       <div class="tab">
         <div class="block"> 
-          <a  href="schedule">
+          <a  href="Schedule">
             <span>
               <img class="iconimg" src="image/Presentation1.jpg" > <br>
             </span>
            </a>
-          <a class="linkdir"  href="schedule.html"> Weekly timetable</a> <br>(Thời khóa biểu từng tuần) 
+          <a class="linkdir"  href="Schedule"> Weekly timetable</a> <br>(Thời khóa biểu từng tuần) 
         </div>
 
         <div class="block"> 
