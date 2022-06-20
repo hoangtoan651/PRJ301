@@ -1,0 +1,55 @@
+h1{
+    font-size: 42px;
+}
+.button{  
+    border-radius: 35px;
+    padding: 8px 16px;
+    margin: 2px;
+    font-size: 16px;
+    background-color: rgb(241, 202, 208);
+    text-decoration: none;
+    color: black;
+}
+.button:hover{
+    background-color: coral;
+    color: black;
+}
+.homebutton{
+    padding-left: 10%;
+}
+.detail{
+    padding-left: 10%;
+}
+.campus{
+    text-align: center;
+}
+.Lecturers{
+    text-align: center;
+}
+body{
+    background-image: url("../image/781efdbf8e6bb94a4059305d7f7842f9.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.tab {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.day{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(82, 193, 130);
+}
+form{
+    width: 80%;
+    padding-left: 10%;
+}
+.date{
+    background-color: rgb(82, 193, 130);
+}
+.note{
+    padding-left: 10%;
+}

@@ -1,0 +1,43 @@
+header{
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    margin-left: 60%;
+}
+
+footer{
+    position: absolute;
+    font-size: 28px;
+    text-align: center;
+    width:99%; 
+    bottom:0px; 
+    color: orange;
+}
+.logo{
+    width: 10%;
+    float:left;
+    border-radius: 20px;
+    
+}
+.siteLogin{
+    
+    display: block;
+    border: white solid 2px;
+    text-align: center;
+    width: 42%;
+    justify-content: center;
+    margin: 10% 0 0 30%;
+    border-radius: 5px;
+}
+.siteLogin p{ 
+    font-size: 45px;
+    font-weight: bold;
+}
+.siteLogin input{
+    margin-bottom: 1%;
+}
+body{
+    width: 99%;
+    height: 90vh;   
+    background-size: cover;
+}

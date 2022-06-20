@@ -1,0 +1,81 @@
+h1{
+    font-size: 42px;
+}
+body{
+    background-image: url("../image/R.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h3{
+    margin-left: 85%;
+    color: black;
+}
+.block {
+    width: 250px;
+    height: 230px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    /* background-color: cyan; */
+    margin: 0 5% 0 5% ;
+    border: 1px solid black;
+    
+}
+.block:hover{
+    background-color: beige;
+    color: black;
+}
+.lol:hover, .lol:active {
+    width: 70%;
+}
+
+.loa{
+    text-align: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+}
+.lol {
+    margin-top: 11%;
+    width: 50%;
+    border-radius: 6%;
+    /* vertical-align:middle; */
+}
+.tsDoai{
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-between; */
+}
+
+.orangeTitle {
+    background-position: 0 -400px;
+    background-color: #ef8d01;
+    width: 18%;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.button{  
+    border-radius: 35px;
+    padding: 8px 16px;
+    margin: 2px;
+    font-size: 16px;
+    background-color: pink;
+    text-decoration: none;
+    color: black;
+}
+.button:hover{
+    background-color: coral;
+    color: black;
+}
+footer{
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    width:99%; 
+    bottom:0px; 
+    font-weight: bold;
+}
