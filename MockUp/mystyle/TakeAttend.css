@@ -1,46 +1,41 @@
+.table{
+    text-align: center;
+    justify-content: center;
+    margin-left: 5%;
+    width: 90%;
+}
+.buttonSave{
+    float:right;
+    margin-right: 5%;
+    
+}
 body{
     background-image: url("../image/jess-bailey-Bg14l3hSAsA-unsplash-1320x990.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
 }
-h1{
-    font-size: 42px;
-    margin-left: 10%;
-}
-h2{
-    font-size: 28px;
-    text-align: center;
+.class{
     justify-content: center;
-    margin-top: 4%;
-}
-p{
     text-align: center;
-    justify-self:center;
+    margin-left: 1%;
+    font-weight: bold;
+    font-size: 18px;
 }
-.attend{
-    margin-left: 10%;
-    width: 80%;
-    height: 40vh;
-    text-align: center;
+img{
+    width:100px;
+    height:100px;
 }
 .button{  
     border-radius: 35px;
     padding: 8px 16px;
     margin: 2px;
     font-size: 16px;
-    background-color: rgb(241, 202, 208);
+    background-color: pink;
     text-decoration: none;
     color: black;
 }
 .button:hover{
     background-color: coral;
     color: black;
-}
-.homebutton{
-    padding-left: 10%;
-}
-img{
-    width:100px;
-    height:100px;
 }
