@@ -15,7 +15,7 @@
 <body class="total">
     <header>
         <h1> FPT University Academic Portal </h1>  
-        <h3> Hello User !!</h3>
+        <h3> Hello ${sessionScope.acc.username}</h3>
     <br>
    
     </header>

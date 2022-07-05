@@ -75,6 +75,9 @@ public class ControllerLogin extends HttpServlet {
         Account acc = db.getAccount(user, pass);
         if(acc != null){
 //            response.getWriter().println("Chao "+ acc.getDisplayName());
+            request.getSession().setAttribute("acc", acc);
+            request.getSession().setAttribute("username", user);
+            request.getSession().setAttribute("password", pass);
             request.getRequestDispatcher("View/Home.jsp").forward(request, response);
         }else{
 //            response.getWriter().println("Password Sai");
