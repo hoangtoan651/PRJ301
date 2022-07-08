@@ -12,6 +12,7 @@ public class Account {
     private String username;
     private String password;
     private String DisplayName;
+    private int role; 
 
     public String getUsername() {
         return username;
@@ -35,6 +36,14 @@ public class Account {
 
     public void setDisplayName(String DisplayName) {
         this.DisplayName = DisplayName;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
     
     
