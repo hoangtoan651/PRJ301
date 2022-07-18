@@ -11,42 +11,55 @@ import java.sql.Date;
  * @author GG
  */
 public class Schedule {
-    private Lesson lession_id;
-    private Student StudentCode;
-    private Lecturers taker;
-    private Group group_id;;
+    private int lession_id;
+    private String StudentCode;
+    private String taker;
+    private int group_id;;
     private int status;
     private Date Time_Record;
 
-    public Lesson getLession_id() {
+    public Schedule() {
+    }
+
+    public Schedule(int lession_id, String StudentCode, String taker, int group_id, int status, Date Time_Record) {
+        this.lession_id = lession_id;
+        this.StudentCode = StudentCode;
+        this.taker = taker;
+        this.group_id = group_id;
+        this.status = status;
+        this.Time_Record = Time_Record;
+    }
+
+    
+    public int getLession_id() {
         return lession_id;
     }
 
-    public void setLession_id(Lesson lession_id) {
+    public void setLession_id(int lession_id) {
         this.lession_id = lession_id;
     }
 
-    public Student getStudentCode() {
+    public String getStudentCode() {
         return StudentCode;
     }
 
-    public void setStudentCode(Student StudentCode) {
+    public void setStudentCode(String StudentCode) {
         this.StudentCode = StudentCode;
     }
 
-    public Lecturers getTaker() {
+    public String getTaker() {
         return taker;
     }
 
-    public void setTaker(Lecturers taker) {
+    public void setTaker(String taker) {
         this.taker = taker;
     }
 
-    public Group getGroup_id() {
+    public int getGroup_id() {
         return group_id;
     }
 
-    public void setGroup_id(Group group_id) {
+    public void setGroup_id(int group_id) {
         this.group_id = group_id;
     }
 
@@ -65,7 +78,7 @@ public class Schedule {
     public void setTime_Record(Date Time_Record) {
         this.Time_Record = Time_Record;
     }
-    
+
     
     
 }

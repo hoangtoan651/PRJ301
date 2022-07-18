@@ -13,6 +13,16 @@ public class Slot {
     private String start;
     private String end;
 
+    public Slot() {
+    }
+
+    public Slot(int slot_id, String start, String end) {
+        this.slot_id = slot_id;
+        this.start = start;
+        this.end = end;
+    }
+
+    
     public int getSlot_id() {
         return slot_id;
     }

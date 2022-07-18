@@ -11,6 +11,7 @@ import java.sql.Date;
  * @author GG
  */
 public class Student {
+    private int id_acc;
     private String student_code;
     private String Name;
     private String Image;
@@ -18,13 +19,12 @@ public class Student {
     private String address;
     private Date dob;
     private boolean gender;
-    private Account account;
 
     public Student() {
     }
 
-    
-    public Student(String student_code, String Name, String Image, String email, String address, Date dob, boolean gender, Account account) {
+    public Student(int id_acc, String student_code, String Name, String Image, String email, String address, Date dob, boolean gender) {
+        this.id_acc = id_acc;
         this.student_code = student_code;
         this.Name = Name;
         this.Image = Image;
@@ -32,10 +32,16 @@ public class Student {
         this.address = address;
         this.dob = dob;
         this.gender = gender;
-        this.account = account;
     }
 
-    
+    public int getId_acc() {
+        return id_acc;
+    }
+
+    public void setId_acc(int id_acc) {
+        this.id_acc = id_acc;
+    }
+
     public String getStudent_code() {
         return student_code;
     }
@@ -92,13 +98,7 @@ public class Student {
         this.gender = gender;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
     
+   
     
 }

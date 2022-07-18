@@ -15,8 +15,18 @@ public class Group {
     private String Group_Name;
     private String course_id;
     private String LecturersCode ;
-    private ArrayList<Student> students;
 
+    public Group() {
+    }
+
+    public Group(int Group_id, String Group_Name, String course_id, String LecturersCode) {
+        this.Group_id = Group_id;
+        this.Group_Name = Group_Name;
+        this.course_id = course_id;
+        this.LecturersCode = LecturersCode;
+    }
+
+    
     public int getGroup_id() {
         return Group_id;
     }
@@ -49,11 +59,12 @@ public class Group {
         this.LecturersCode = LecturersCode;
     }
 
-    public ArrayList<Student> getStudents() {
-        return students;
+    @Override
+    public String toString() {
+        return Group_Name ;
     }
 
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
+   
+   
+
 }

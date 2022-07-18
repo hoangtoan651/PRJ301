@@ -11,51 +11,49 @@ import java.sql.Date;
  * @author GG
  */
 public class Lecturers {
-    private int instructor_id;
-    private String Lname;
-    private String Lcode;
+    private int id_acc;
+    private String LecturersCode;
+    private String LecName;
     private String email;
-    private String address;
-    private Date dob;
-    private boolean gender;
-    private Account account;
+    private String Address;
+    private Boolean gender;
+    private Date Dob;
 
     public Lecturers() {
     }
 
-    public Lecturers(int instructor_id, String Lname, String Lcode, String email, String address, Date dob, boolean gender, Account account) {
-        this.instructor_id = instructor_id;
-        this.Lname = Lname;
-        this.Lcode = Lcode;
+    public Lecturers(int id_acc, String LecturersCode, String LecName, String email, String Address, Boolean gender, Date Dob) {
+        this.id_acc = id_acc;
+        this.LecturersCode = LecturersCode;
+        this.LecName = LecName;
         this.email = email;
-        this.address = address;
-        this.dob = dob;
+        this.Address = Address;
         this.gender = gender;
-        this.account = account;
+        this.Dob = Dob;
     }
 
-    public int getInstructor_id() {
-        return instructor_id;
+    public int getId_acc() {
+        return id_acc;
     }
 
-    public void setInstructor_id(int instructor_id) {
-        this.instructor_id = instructor_id;
+    public void setId_acc(int id_acc) {
+        this.id_acc = id_acc;
     }
 
-    public String getLname() {
-        return Lname;
+    public String getLecturersCode() {
+        return LecturersCode;
     }
 
-    public void setLname(String Lname) {
-        this.Lname = Lname;
+    public void setLecturersCode(String LecturersCode) {
+        this.LecturersCode = LecturersCode;
     }
 
-    public String getLcode() {
-        return Lcode;
+    public String getLecName() {
+        return LecName;
     }
 
-    public void setLcode(String Lcode) {
-        this.Lcode = Lcode;
+    public void setLecName(String LecName) {
+        this.LecName = LecName;
     }
 
     public String getEmail() {
@@ -67,36 +65,34 @@ public class Lecturers {
     }
 
     public String getAddress() {
-        return address;
+        return Address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
-
-    public boolean isGender() {
+    public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(Boolean gender) {
         this.gender = gender;
     }
 
-    public Account getAccount() {
-        return account;
+    public Date getDob() {
+        return Dob;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setDob(Date Dob) {
+        this.Dob = Dob;
     }
+
+    @Override
+    public String toString() {
+        return "Lecturers{" + "id_acc=" + id_acc + ", LecturersCode=" + LecturersCode + ", LecName=" + LecName + ", email=" + email + ", Address=" + Address + ", gender=" + gender + ", Dob=" + Dob + '}';
+    }
+    
     
     
 }

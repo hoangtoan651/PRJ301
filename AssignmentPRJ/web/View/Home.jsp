@@ -24,7 +24,7 @@
             <a class="button" href="#">Home</a>
             <a class="button" href="#">Change Profile</a>
             <a class="button" href="#">Change Password</a>
-            <a class="button" href="#">Log out</a>
+            <a class="button" href="logout">Log out</a>
         </nav>
      <br>
      <br>
@@ -40,12 +40,12 @@
         </div>
 
         <div class="block"> 
-          <a href="syllabus">
+          <a href="attend">
             <span>
               <img class="iconimg" src="image/Presentation2.jpg" > <br>
             </span>
           </a>
-          <a class="linkdir"  href="syllabus.html">View Syllabus</a> <br>(Xem đề cương môn học)
+          <a class="linkdir"  href="attend">Take Attendance</a> <br>(Điểm danh)
         </div>
 
         <div class="block"> 

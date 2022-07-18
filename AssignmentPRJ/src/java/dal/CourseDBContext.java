@@ -10,73 +10,58 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Account;
+import model.Course;
 
 /**
  *
  * @author GG
  */
-public class AccountDBContext extends DBContext<Account>{
-    
-    public Account getAccount(String username, String password){
+public class CourseDBContext extends DBContext<Course>{
+
+    public Course getCourseByID(String cid) {
         try {
-            String sql="select username from Account where username=? and password = ? ";
+            String sql = "Select *from Course where Course_id = '" + cid + "'";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                Account acc = new Account();
-                acc.setUsername(rs.getString("username"));
-//                acc.setDisplayName(rs.getString("DisplayName"));
-                return acc;
+            while (rs.next()) {
+                String courseID = rs.getString(1);
+                String courseName = rs.getString(2);
+                Course crs = new Course(courseID, courseName);
+                 return crs;
             }
-            
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CourseDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
-    public String getUser(String user, String pass){
-        String sql = "select username from Account where username=? and password = ?";
-        try {
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, user);
-            stm.setString(2, pass);
-            ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                return rs.getString(1);
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-
     @Override
-    public ArrayList<Account> list() {
+    public ArrayList<Course> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Account get(int id) {
+    public Course get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Account model) {
+    public void insert(Course model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Account model) {
+    public void update(Course model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Account model) {
+    public void delete(Course model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+//    public static void main(String[] args) {
+//        CourseDBContext t = new CourseDBContext();
+//        System.out.println(t.getCourseByID("PRJ301").toString());
+//        
+//    }
 }

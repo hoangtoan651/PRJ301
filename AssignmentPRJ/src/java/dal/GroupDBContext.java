@@ -10,73 +10,66 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Account;
+import model.Group;
 
 /**
  *
  * @author GG
  */
-public class AccountDBContext extends DBContext<Account>{
+public class GroupDBContext extends DBContext<Group>{
     
-    public Account getAccount(String username, String password){
+    public ArrayList<Group> getGroupByID() {
+        ArrayList<Group> list = new ArrayList<>();
         try {
-            String sql="select username from Account where username=? and password = ? ";
+            String sql = "Select Group_Name from [Group] ";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
+//            stm.setString(1, lec);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                Account acc = new Account();
-                acc.setUsername(rs.getString("username"));
-//                acc.setDisplayName(rs.getString("DisplayName"));
-                return acc;
+            while (rs.next()) {
+                Group crs = new Group();
+//                crs.setGroup_id(rs.getInt(1));
+                crs.setGroup_Name(rs.getString(1));
+//                crs.setCourse_id(rs.getString(3));
+//                crs.setLecturersCode(rs.getString(4));
+                list.add(crs);
+                //return list;
             }
-            
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GroupDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
-    }
-    public String getUser(String user, String pass){
-        String sql = "select username from Account where username=? and password = ?";
-        try {
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, user);
-            stm.setString(2, pass);
-            ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                return rs.getString(1);
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+        return list;
     }
 
     @Override
-    public ArrayList<Account> list() {
+    public ArrayList<Group> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Account get(int id) {
+    public Group get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Account model) {
+    public void insert(Group model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Account model) {
+    public void update(Group model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Account model) {
+    public void delete(Group model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    public static void main(String[] args) {
+        GroupDBContext t = new GroupDBContext();
+        ArrayList<Group> gr = t.getGroupByID();
+        for (Group group : gr) {
+            System.out.println(group.toString());
+        }
+    }
 }

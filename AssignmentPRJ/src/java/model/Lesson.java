@@ -12,14 +12,29 @@ import java.sql.Date;
  */
 public class Lesson {
     private int lesson_id;
-    private Course Course_id;
-    private Group group;
+    private String Course_id;
+    private int group_id;
     private String Lesson_Name;
     private Date date;
-    private Slot slot;
-    private Lecturers lecturers;
-    private Room room;
+    private int slot;
+    private String lecturerCode;
+    private int room;
 
+    public Lesson() {
+    }
+
+    public Lesson(int lesson_id, String Course_id, int group_id, String Lesson_Name, Date date, int slot, String lecturerCode, int room) {
+        this.lesson_id = lesson_id;
+        this.Course_id = Course_id;
+        this.group_id = group_id;
+        this.Lesson_Name = Lesson_Name;
+        this.date = date;
+        this.slot = slot;
+        this.lecturerCode = lecturerCode;
+        this.room = room;
+    }
+
+    
     public int getLesson_id() {
         return lesson_id;
     }
@@ -28,20 +43,20 @@ public class Lesson {
         this.lesson_id = lesson_id;
     }
 
-    public Course getCourse_id() {
+    public String getCourse_id() {
         return Course_id;
     }
 
-    public void setCourse_id(Course Course_id) {
+    public void setCourse_id(String Course_id) {
         this.Course_id = Course_id;
     }
 
-    public Group getGroup() {
-        return group;
+    public int getGroup_id() {
+        return group_id;
     }
 
-    public void setGroup(Group group) {
-        this.group = group;
+    public void setGroup_id(int group_id) {
+        this.group_id = group_id;
     }
 
     public String getLesson_Name() {
@@ -60,30 +75,36 @@ public class Lesson {
         this.date = date;
     }
 
-    public Slot getSlot() {
+    public int getSlot() {
         return slot;
     }
 
-    public void setSlot(Slot slot) {
+    public void setSlot(int slot) {
         this.slot = slot;
     }
 
-    public Lecturers getLecturers() {
-        return lecturers;
+    public String getLecturerCode() {
+        return lecturerCode;
     }
 
-    public void setLecturers(Lecturers lecturers) {
-        this.lecturers = lecturers;
+    public void setLecturerCode(String lecturerCode) {
+        this.lecturerCode = lecturerCode;
     }
 
-    public Room getRoom() {
+    public int getRoom() {
         return room;
     }
 
-    public void setRoom(Room room) {
+    public void setRoom(int room) {
         this.room = room;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Lesson{" + "lesson_id=" + lesson_id + ", Course_id=" + Course_id + ", group_id=" + group_id + ", Lesson_Name=" + Lesson_Name + ", date=" + date + ", slot=" + slot + ", lecturerCode=" + lecturerCode + ", room=" + room + '}';
+    }
+
+   
     
     
 }

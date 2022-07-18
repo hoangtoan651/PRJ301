@@ -10,73 +10,61 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Account;
+import model.Lecturers;
 
 /**
  *
  * @author GG
  */
-public class AccountDBContext extends DBContext<Account>{
-    
-    public Account getAccount(String username, String password){
-        try {
-            String sql="select username from Account where username=? and password = ? ";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, password);
-            ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                Account acc = new Account();
-                acc.setUsername(rs.getString("username"));
-//                acc.setDisplayName(rs.getString("DisplayName"));
-                return acc;
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    public String getUser(String user, String pass){
-        String sql = "select username from Account where username=? and password = ?";
+public class LecturerDBContext extends DBContext<Lecturers>{
+    public ArrayList<Lecturers> listLec(String LecID){
+        ArrayList<Lecturers> list = new ArrayList<>();
+        String sql = "select LecturersCode ,LecName from Lecturers where LecturersCode = ?";
         try {
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, user);
-            stm.setString(2, pass);
+            stm.setString(1, LecID);
             ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                return rs.getString(1);
+            while(rs.next()){
+                Lecturers l = new Lecturers();
+                l.setLecturersCode(rs.getString(1));
+                l.setLecName(rs.getString(2));
+                list.add(l);
+                
             }
-            
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LecturerDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return list;
     }
-
     @Override
-    public ArrayList<Account> list() {
+    public ArrayList<Lecturers> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Account get(int id) {
+    public Lecturers get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Account model) {
+    public void insert(Lecturers model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Account model) {
+    public void update(Lecturers model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Account model) {
+    public void delete(Lecturers model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+//    public static void main(String[] args) {
+//        LecturerDBContext ls = new LecturerDBContext();
+//        ArrayList<Lecturers> tag = ls.listLec("sonnt5");
+//        for (Lecturers lecturers : tag) {
+//            System.out.println(lecturers.toString());
+//        }
+//    }
 }

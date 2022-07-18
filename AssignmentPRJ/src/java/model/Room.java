@@ -12,6 +12,15 @@ public class Room {
     private int Room_id;
     private String RName;
 
+    public Room() {
+    }
+
+    public Room(int Room_id, String RName) {
+        this.Room_id = Room_id;
+        this.RName = RName;
+    }
+
+    
     public int getRoom_id() {
         return Room_id;
     }

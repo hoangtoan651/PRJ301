@@ -13,7 +13,14 @@ import java.util.ArrayList;
 public class Course {
     private String course_id;
     private String course_name;
-    private ArrayList<Group> groups;
+
+    public Course() {
+    }
+
+    public Course(String course_id, String course_name) {
+        this.course_id = course_id;
+        this.course_name = course_name;
+    }
 
     public String getCourse_id() {
         return course_id;
@@ -31,13 +38,10 @@ public class Course {
         this.course_name = course_name;
     }
 
-    public ArrayList<Group> getGroups() {
-        return groups;
+    @Override
+    public String toString() {
+        return "Course{" + "course_id=" + course_id + ", course_name=" + course_name + '}';
     }
 
-    public void setGroups(ArrayList<Group> groups) {
-        this.groups = groups;
-    }
-    
     
 }
