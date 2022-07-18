@@ -5,18 +5,12 @@
 
 package controller;
 
-import dal.AccountDBContext;
-import dal.LessonDBContext;
-import dal.ScheduleDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import model.Attend;
-import model.Lesson;
 
 /**
  *
@@ -46,14 +40,6 @@ public class ControllerSchedule extends HttpServlet {
 //            out.println("</body>");
 //            out.println("</html>");
 //        }
-        ScheduleDBContext db = new ScheduleDBContext();
-        String user = (String)request.getSession().getAttribute("username");
-        String pass = (String)request.getSession().getAttribute("password");
-        AccountDBContext acc = new AccountDBContext();
-        String username = acc.getUser(user, pass);
-        String NameClass = request.getParameter("Group_Name");
-        ArrayList<Attend> list = db.ShowAttend(NameClass,username);
-        request.getRequestDispatcher("View/Schedule.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -80,9 +66,7 @@ public class ControllerSchedule extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        LessonDBContext ls = new LessonDBContext();
-        ArrayList<Lesson> list = ls.list();
-        request.getSession().setAttribute("list", list);
+        processRequest(request, response);
     }
 
     /** 

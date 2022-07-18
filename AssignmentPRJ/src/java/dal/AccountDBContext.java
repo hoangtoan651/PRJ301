@@ -20,7 +20,7 @@ public class AccountDBContext extends DBContext<Account>{
     
     public Account getAccount(String username, String password){
         try {
-            String sql="select username from Account where username=? and password = ? ";
+            String sql="select username from Account where username=? and password = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
@@ -30,22 +30,6 @@ public class AccountDBContext extends DBContext<Account>{
                 acc.setUsername(rs.getString("username"));
 //                acc.setDisplayName(rs.getString("DisplayName"));
                 return acc;
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    public String getUser(String user, String pass){
-        String sql = "select username from Account where username=? and password = ?";
-        try {
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, user);
-            stm.setString(2, pass);
-            ResultSet rs = stm.executeQuery();
-            if(rs.next()){
-                return rs.getString(1);
             }
             
         } catch (SQLException ex) {

@@ -45,7 +45,7 @@
               <img class="iconimg" src="image/Presentation2.jpg" > <br>
             </span>
           </a>
-          <a class="linkdir"  href="attend">Take Attendance</a> <br>(Điểm danh)
+          <a class="linkdir"  href="attend">Take Attend</a> <br>(Điểm danh)
         </div>
 
         <div class="block"> 
